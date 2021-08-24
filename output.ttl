@@ -1,0 +1,9 @@
+@prefix ns1: <prefix://> .
+
+ns1:agricultural_engineer ns1:analyzes ns1:environmental_properties,
+        ns1:tomato_plants ;
+    ns1:interprets ns1:results_of_soil_analysis ;
+    ns1:sets ns1:frequency_of_irrigation .
+
+ns1:gardener ns1:applies ns1:solution_to_soil .
+
