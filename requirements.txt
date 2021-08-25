@@ -2,7 +2,7 @@ spacy
 rdflib
 networkx
 matplotlib
-cython # Should be before spikex
-spikex
+# cython # Should be before spikex
+# spikex
 requests
 beautifulsoup4

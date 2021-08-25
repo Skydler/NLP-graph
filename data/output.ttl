@@ -1,18 +1,71 @@
-@prefix ns1: <prefix://> .
-@prefix ns2: <http://www.w3.org/2004/02/skos/core#> .
+@prefix agrovoc: <http://aims.fao.org/aos/agrovoc/> .
+@prefix ns1: <http://www.w3.org/2004/02/skos/core#> .
+@prefix pref: <prefix://> .
 
-ns1:agricultural_engineer ns1:analyzes ns1:environmental_properties,
-        ns1:tomato_plants ;
-    ns1:interprets ns1:results_of_soil_analysis ;
-    ns1:is_agrovoc <http://aims.fao.org/aos/agrovoc/c_8673> ;
-    ns1:loads ns1:tank ;
-    ns1:sets ns1:frequency_of_irrigation .
+agrovoc:c_10463 ns1:broader agrovoc:c_8309 .
 
-ns1:gardener ns1:applies ns1:solution_to_soil .
+agrovoc:c_12600 ns1:broader agrovoc:c_8309 .
 
-<http://aims.fao.org/aos/agrovoc/c_25687> ns2:broader <http://aims.fao.org/aos/agrovoc/c_7984> .
+agrovoc:c_1312967232551 ns1:broader agrovoc:c_8309 .
 
-<http://aims.fao.org/aos/agrovoc/c_8673> ns2:broader <http://aims.fao.org/aos/agrovoc/c_2571> .
+agrovoc:c_16376 ns1:broader agrovoc:c_8309 .
 
-ns1:tank ns1:is_agrovoc <http://aims.fao.org/aos/agrovoc/c_25687> .
+agrovoc:c_25202 ns1:broader agrovoc:c_8309 .
+
+agrovoc:c_25424 ns1:broader agrovoc:c_8309 .
+
+agrovoc:c_2c926203 ns1:broader agrovoc:c_8309 .
+
+agrovoc:c_3102 ns1:broader agrovoc:c_8309 .
+
+agrovoc:c_3391 ns1:broader agrovoc:c_8309 .
+
+agrovoc:c_34804 ns1:broader agrovoc:c_8309 .
+
+agrovoc:c_35207 ns1:broader agrovoc:c_8309 .
+
+agrovoc:c_36640 ns1:broader agrovoc:c_8309 .
+
+agrovoc:c_3958 ns1:broader agrovoc:c_8309 .
+
+agrovoc:c_54ff8abb ns1:broader agrovoc:c_8309 .
+
+agrovoc:c_620d87a0 ns1:broader agrovoc:c_8309 .
+
+agrovoc:c_69c7d61f ns1:broader agrovoc:c_8309 .
+
+agrovoc:c_7205 ns1:broader agrovoc:c_8309 .
+
+agrovoc:c_82627993 ns1:broader agrovoc:c_8309 .
+
+agrovoc:c_97d761ef ns1:broader agrovoc:c_8309 .
+
+agrovoc:c_abb97223 ns1:broader agrovoc:c_8309 .
+
+agrovoc:c_ae95aafb ns1:broader agrovoc:c_8309 .
+
+agrovoc:c_b1215876 ns1:broader agrovoc:c_8309 .
+
+agrovoc:c_c55f5920 ns1:broader agrovoc:c_8309 .
+
+agrovoc:c_e6af4d92 ns1:broader agrovoc:c_8309 .
+
+agrovoc:c_f341ce53 ns1:broader agrovoc:c_8309 .
+
+agrovoc:c_f3c3b355 ns1:broader agrovoc:c_8309 .
+
+pref:agricultural_engineer pref:analyzes pref:environmental_properties,
+        pref:tomato_plants ;
+    pref:interprets pref:results_of_soil_analysis ;
+    pref:is_agrovoc agrovoc:c_8673 ;
+    pref:sets pref:frequency_of_irrigation .
+
+pref:gardener pref:applies pref:solution_to_soil ;
+    pref:throws pref:water .
+
+agrovoc:c_8673 ns1:broader agrovoc:c_2571 .
+
+pref:water pref:is_agrovoc agrovoc:c_8309 .
+
+agrovoc:c_8309 ns1:broader agrovoc:c_330705 .
 
