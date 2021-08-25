@@ -1,9 +1,18 @@
 @prefix ns1: <prefix://> .
+@prefix ns2: <http://www.w3.org/2004/02/skos/core#> .
 
 ns1:agricultural_engineer ns1:analyzes ns1:environmental_properties,
         ns1:tomato_plants ;
     ns1:interprets ns1:results_of_soil_analysis ;
+    ns1:is_agrovoc <http://aims.fao.org/aos/agrovoc/c_8673> ;
+    ns1:loads ns1:tank ;
     ns1:sets ns1:frequency_of_irrigation .
 
 ns1:gardener ns1:applies ns1:solution_to_soil .
+
+<http://aims.fao.org/aos/agrovoc/c_25687> ns2:broader <http://aims.fao.org/aos/agrovoc/c_7984> .
+
+<http://aims.fao.org/aos/agrovoc/c_8673> ns2:broader <http://aims.fao.org/aos/agrovoc/c_2571> .
+
+ns1:tank ns1:is_agrovoc <http://aims.fao.org/aos/agrovoc/c_25687> .
 

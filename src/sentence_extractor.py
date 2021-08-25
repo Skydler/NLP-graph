@@ -201,19 +201,6 @@ def _get_that_resolution(toks):
     return None
 
 
-# print information for displaying all kinds of things of the parse tree
-def printDeps(toks):
-    for tok in toks:
-        print(
-            tok.orth_,
-            tok.dep_,
-            tok.pos_,
-            tok.head.orth_,
-            [t.orth_ for t in tok.lefts],
-            [t.orth_ for t in tok.rights],
-        )
-
-
 # expand an obj / subj np using its chunk
 def expand(item, tokens, visited):
     if item.lower_ == "that":
