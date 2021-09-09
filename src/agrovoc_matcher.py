@@ -1,12 +1,8 @@
-# import spacy
 import logging
 
 from bs4 import BeautifulSoup
 from rdflib import Graph, SKOS
 import requests as rq
-
-# from spikex.pipes import WikiPageX
-# from spikex.wikigraph import load as wg_load
 
 from consts import AGROVOC_PREFIX, BASE_AGROVOC_URL, LOCAL_GRAPH_PREFIX as PREFIX
 from utils import normalize_resource
@@ -73,32 +69,6 @@ def create_remote_graph(URI):
 
 
 def get_related_triplets(g, subject_id):
-    broader_concepts = g.triples((AGROVOC_PREFIX[subject_id], SKOS.broader, None))
+    broader_concepts = g.triples((AGROVOC_PREFIX[subject_id], SKOS.narrower, None))
     narrower_concepts = g.triples((None, SKOS.broader, AGROVOC_PREFIX[subject_id]))
     return list(broader_concepts) + list(narrower_concepts)
-
-
-# ================================= UNUSED for now... ================================
-#
-# def find_wikipedia_articles(tokens):
-#     wg = wg_load("simplewiki_core")
-#     wpx = WikiPageX(wg)
-
-#     doc = wpx(tokens)
-#     return doc._.wiki_spans
-
-
-# def main():
-#     nlp = spacy.load("en_core_web_sm")  # English tokenizer
-
-#     with open("../data/input.txt") as file:
-#         text = file.read()
-
-#     doc = nlp(text)
-#     wiki_words = find_wikipedia_articles(doc)
-#     for word in wiki_words:
-#         print(word, "---> ", word._.wiki_pages)
-
-
-# if __name__ == "__main__":
-#     main()
