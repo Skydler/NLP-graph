@@ -1,6 +1,6 @@
 @prefix agrovoc: <http://aims.fao.org/aos/agrovoc/> .
+@prefix local: <prefix://> .
 @prefix ns1: <http://www.w3.org/2004/02/skos/core#> .
-@prefix pref: <prefix://> .
 
 agrovoc:c_10463 ns1:broader agrovoc:c_8309 .
 
@@ -54,18 +54,18 @@ agrovoc:c_f341ce53 ns1:broader agrovoc:c_8309 .
 
 agrovoc:c_f3c3b355 ns1:broader agrovoc:c_8309 .
 
-pref:agricultural_engineer pref:analyzes pref:environmental_properties,
-        pref:tomato_plants ;
-    pref:interprets pref:results_of_soil_analysis ;
-    pref:is_agrovoc agrovoc:c_8673 ;
-    pref:sets pref:frequency_of_irrigation .
+local:agricultural_engineer local:analyzes local:environmental_properties,
+        local:tomato_plants ;
+    local:interprets local:results_of_soil_analysis ;
+    local:is_agrovoc agrovoc:c_8673 ;
+    local:sets local:frequency_of_irrigation .
 
-pref:gardener pref:applies pref:solution_to_soil ;
-    pref:throws pref:water .
+local:gardener local:applies local:solution_to_soil ;
+    local:puts local:water .
 
 agrovoc:c_8673 ns1:broader agrovoc:c_2571 .
 
-pref:water pref:is_agrovoc agrovoc:c_8309 .
+local:water local:is_agrovoc agrovoc:c_8309 .
 
 agrovoc:c_8309 ns1:broader agrovoc:c_330705 .
 
