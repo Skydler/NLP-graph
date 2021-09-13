@@ -1,7 +1,7 @@
 import logging
 
 from bs4 import BeautifulSoup
-from rdflib import Graph, SKOS
+from rdflib import Graph, OWL, SKOS
 import requests as rq
 
 from consts import AGROVOC_PREFIX, BASE_AGROVOC_URL, LOCAL_GRAPH_PREFIX as PREFIX
@@ -16,7 +16,7 @@ def extend_with_agrovoc(g, concept):
     normalized_concept = normalize_resource(concept)
 
     # Prevent further requests if it's already processed
-    if (PREFIX[normalized_concept], PREFIX["is_agrovoc"], None) in g:
+    if (PREFIX[normalized_concept], OWL.sameAs, None) in g:
         return
 
     concept_URI = search_agrovoc_concept(concept)
@@ -32,7 +32,7 @@ def extend_with_agrovoc(g, concept):
     g.add(
         (
             PREFIX[normalized_concept],
-            PREFIX["is_agrovoc"],
+            OWL.sameAs,
             AGROVOC_PREFIX[concept_ID],
         )
     )
@@ -70,5 +70,5 @@ def create_remote_graph(URI):
 
 def get_related_triplets(g, subject_id):
     broader_concepts = g.triples((AGROVOC_PREFIX[subject_id], SKOS.narrower, None))
-    narrower_concepts = g.triples((None, SKOS.broader, AGROVOC_PREFIX[subject_id]))
+    narrower_concepts = g.triples((AGROVOC_PREFIX[subject_id], SKOS.broader, None))
     return list(broader_concepts) + list(narrower_concepts)
